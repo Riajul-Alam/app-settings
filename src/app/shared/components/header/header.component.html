@@ -1,0 +1,55 @@
+
+<div class="container">
+    <div class="header-container">
+        <div class="hamburger" (click)="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </div>
+        <div class="logo">
+            <img src="https://mms.businesswire.com/media/20201022005117/en/863276/23/4357163cTennantCompany-logo-fullcolor-transparent.jpg" alt="">
+        </div>
+    
+        <div class="menu hide-item">
+            <a class="menu-item">Overview</a>
+            <a class="menu-item">Location</a>
+            <a class="menu-item">Usage</a>
+            <a class="menu-item">Run Time</a>
+            <a class="menu-item">Admin</a>
+            <a class="menu-item">Service</a>
+        </div>
+
+        <div class="actions">
+            <span class="action-item">
+                <i class="fa fa-bell"></i>
+                <span class="action-item-text hide-item">Alerts</span>
+                <span class="action-item-count">25</span>
+            </span>
+            <div class="dropdown">
+                <div class="user-button" (click)="toggleUserButtonMenu()" (click)="preventCloseOnClick()">
+                    <span class="action-item">
+                        <i class="fa-regular fa-circle-user"></i>
+                        <span class="action-item-email">{{'USER@GMAIL.COM'}}</span>
+                    </span>
+                </div>
+                <div class="dropdown-menu" *ngIf="userButtonmenuOpen">
+                  <a routerLink="">Option 1</a>
+                  <a routerLink="">Option 2</a>
+                  <a routerLink="">Option 3</a>
+                  <a routerLink="">Option 1</a>
+                  <a routerLink="">Option 2</a>
+                  <a routerLink="">Logout</a>
+                </div>
+              </div>
+              
+        </div>
+    </div>
+    <div class="nav-menu" [ngClass]="{'open': menuOpen}" (click)="toggleMenu()">
+        <a routerLink="" class="menu-item">Overview</a>
+        <a routerLink="" class="menu-item">Location</a>
+        <a routerLink="" class="menu-item">Usage</a>
+        <a routerLink="" class="menu-item">Run Time</a>
+        <a routerLink="" class="menu-item">Admin</a>
+        <a routerLink="" class="menu-item">Service</a>
+        <a routerLink="/settings/account" class="menu-item">Account</a>
+    </div>
+</div>
+
